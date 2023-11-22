@@ -4,7 +4,7 @@ from src.config import ModelConfig
 from src.whisper.abstractWhisperContainer import AbstractWhisperContainer
 
 def create_whisper_container(whisper_implementation: str, 
-                             model_name: str, device: str = None, compute_type: str = "float16",
+                             model_name: str, device: str = None, compute_type: str = "float16", flash: bool = False,
                              download_root: str = None,
                              cache: modelCache = None, models: List[ModelConfig] = []) -> AbstractWhisperContainer:
     print("Creating whisper container for " + whisper_implementation)
@@ -19,5 +19,8 @@ def create_whisper_container(whisper_implementation: str,
         # This is useful for testing
         from src.whisper.dummyWhisperContainer import DummyWhisperContainer
         return DummyWhisperContainer(model_name=model_name, device=device, compute_type=compute_type, download_root=download_root, cache=cache, models=models)
+    elif (whisper_implementation == "insanely-faster-whisper" or whisper_implementation == "insanely_faster_whisper"):
+        from src.whisper.insanelyFasterWhisperContainer import InsanelyFasterWhisperContainer
+        return InsanelyFasterWhisperContainer(model_name=model_name, device=device, compute_type=compute_type, flash=flash, download_root=download_root, cache=cache, models=models)
     else:
         raise ValueError("Unknown Whisper implementation: " + whisper_implementation)
