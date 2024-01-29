@@ -7,6 +7,9 @@ json5
 torch
 torchaudio
 more_itertools
+kaleido
+typing-extensions<4.6.0
+tensorflow[and-cuda]
 
 # Needed by diarization
 intervaltree
