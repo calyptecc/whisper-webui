@@ -102,7 +102,7 @@
     // The window size (in seconds) to merge voice segments
     "vad_merge_window": 5,
     // The maximum size (in seconds) of a voice segment
-    "vad_max_merge_size": 30,
+    "vad_max_merge_size": 60,
     // The padding (in seconds) to add to each voice segment
     "vad_padding": 1,
     // Whether or not to prepend the initial prompt to each VAD segment (prepend_all_segments), or just the first segment (prepend_first_segment)
