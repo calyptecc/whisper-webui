@@ -86,7 +86,7 @@
     // The number of seconds before inactivate processes are terminated. Use 0 to close processes immediately, or None for no timeout.
     "vad_process_timeout": 1800,
     // True to use all available GPUs and CPU cores for processing. Use vad_cpu_cores/vad_parallel_devices to specify the number of CPU cores/GPUs to use.
-    "auto_parallel": True,
+    "auto_parallel": true,
     // Directory to save the outputs (CLI will use the current directory if not specified)
     "output_dir": null,
     // The path to save model files; uses ~/.cache/whisper by default
