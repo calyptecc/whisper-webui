@@ -9,6 +9,7 @@ torchaudio
 more_itertools
 kaleido
 typing-extensions<4.6.0
+tensorrt
 tensorflow[and-cuda]
 
 # Needed by diarization
